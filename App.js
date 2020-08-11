@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, SafeAreaView } from 'react-native'
 import WelcomeScreen from './app/screens/WelcomeScreen'
+import ViewImageScreen from './app/screens/ViewImageScreen'
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
 })
 
 const App = () => {
-  return <WelcomeScreen />
+  return <ViewImageScreen />
 }
 
 export default App

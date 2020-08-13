@@ -1,17 +1,24 @@
 import React from 'react'
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
+import { StyleSheet, View, SafeAreaView } from 'react-native'
 import WelcomeScreen from './app/screens/WelcomeScreen'
 import ViewImageScreen from './app/screens/ViewImageScreen'
+import AppButton from './app/components/AppButton'
+
+const App = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <AppButton title="LOGIN" onPress={() => console.log('login')}></AppButton>
+    </SafeAreaView>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 })
-
-const App = () => {
-  return <ViewImageScreen />
-}
 
 export default App

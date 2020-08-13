@@ -5,11 +5,7 @@ import ViewImageScreen from './app/screens/ViewImageScreen'
 import AppButton from './app/components/AppButton'
 
 const App = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <AppButton title="LOGIN" onPress={() => console.log('login')}></AppButton>
-    </SafeAreaView>
-  )
+  return <WelcomeScreen />
 }
 
 const styles = StyleSheet.create({

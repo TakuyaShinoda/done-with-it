@@ -1,44 +1,8 @@
 import React from 'react'
-import { StyleSheet, View, SafeAreaView } from 'react-native'
-import WelcomeScreen from './app/screens/WelcomeScreen'
-import ViewImageScreen from './app/screens/ViewImageScreen'
-import AppButton from './app/components/AppButton'
-import Card from './app/components/Card'
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen'
+import MessageScreen from './app/screens/MessagesScreen'
 
 const App = () => {
-  return (
-    // <View
-    //   style={{
-    //     backgroundColor: '#f8f4f4',
-    //     flex: 1,
-    //     padding: 20,
-    //     paddingTop: 60,
-    //   }}
-    // >
-    //   <Card
-    //     title="Red jacket for Sale!"
-    //     subTitle="$100"
-    //     image={require('./app/assets/jacket.jpg')}
-    //   />
-    //   <Card
-    //     title="Red jacket for Sale!"
-    //     subTitle="$100"
-    //     image={require('./app/assets/jacket.jpg')}
-    //   />
-    // </View>
-    // <ListingDetailsScreen />
-    <ViewImageScreen />
-  )
+  return <MessageScreen />
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
 
 export default App

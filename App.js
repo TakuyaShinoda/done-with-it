@@ -1,11 +1,8 @@
 import React from 'react'
-import Screen from './app/components/Secreen'
-import ListItem from './app/components/ListItem'
-import Icon from './app/components/Icon'
-import AccountScreen from './app/screens/AccountScreen'
+import ListingsScreen from './app/screens/ListingsScreen'
 
 const App = () => {
-  return <AccountScreen />
+  return <ListingsScreen />
 }
 
 export default App

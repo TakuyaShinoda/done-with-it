@@ -1,8 +1,13 @@
 import React from 'react'
-import MessageScreen from './app/screens/MessagesScreen'
+import Screen from './app/components/Secreen'
+import Icon from './app/components/Icon'
 
 const App = () => {
-  return <MessageScreen />
+  return (
+    <Screen>
+      <Icon name="email" size={50} backgroundColor="red" iconColor="white" />
+    </Screen>
+  )
 }
 
 export default App

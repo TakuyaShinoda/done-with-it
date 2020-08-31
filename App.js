@@ -1,9 +1,9 @@
 import React from 'react'
 
-import RegisterScreen from './app/screens/ListingEditScreen'
+import MessagesScreen from './app/screens/MessagesScreen'
 
 const App = () => {
-  return <RegisterScreen />
+  return <MessagesScreen />
 }
 
 export default App

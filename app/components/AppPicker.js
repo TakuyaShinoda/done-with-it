@@ -13,7 +13,6 @@ import defaultStyles from '../config/styles'
 import AppText from './AppText'
 import Screen from './Screen'
 import PickerItem from './PickerItem'
-import ListItem from './ListItem'
 
 const AppPicker = ({
   icon,

@@ -3,6 +3,7 @@ import { Button, Image } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
 
 import Screen from './app/components/Screen'
+import ImageInput from './app/components/ImageInput'
 
 const App = () => {
   const [imageUri, setImageUri] = useState()
@@ -16,19 +17,9 @@ const App = () => {
     requestPermission()
   }, [])
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync()
-      if (!result.cancelled) setImageUri(result.uri)
-    } catch (error) {
-      console.log('Error reading an Image', error)
-    }
-  }
-
   return (
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+      <ImageInput imageUri={imageUri} onChangeImage={uri => setImageUri(uri)} />
     </Screen>
   )
 }

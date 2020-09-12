@@ -3,16 +3,19 @@ import { View, Image, Text, StyleSheet } from 'react-native'
 
 import AppText from './AppText'
 import colors from '../config/colors'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 
-const Card = ({ title, subTitle, image }) => {
+const Card = ({ title, subTitle, image, onPress }) => {
   return (
-    <View style={styles.card}>
-      <Image source={image} style={styles.image} />
-      <View style={styles.detailContainer}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle}</AppText>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image source={image} style={styles.image} />
+        <View style={styles.detailContainer}>
+          <AppText style={styles.title}>{title}</AppText>
+          <AppText style={styles.subTitle}>{subTitle}</AppText>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 

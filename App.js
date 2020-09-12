@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 
-import AuthNavigation from './app/navigation/AuthNavigation'
+import AppNavigator from './app/navigation/AppNavigator'
 import navigationTheme from './app/navigation/NavigationTheme'
 
 const App = () => {
   return (
     <NavigationContainer theme={navigationTheme}>
-      <AuthNavigation />
+      <AppNavigator />
     </NavigationContainer>
   )
 }

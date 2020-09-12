@@ -4,11 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 import WelcomeScreen from '../screens/WelcomeScreen'
 import LoginScreen from '../screens/LoginScreen'
 import RegisterScreen from '../screens/RegisterScreen'
-import navigationTheme from './NavigationTheme'
 
 const Stack = createStackNavigator()
 
-const AuthNavigation = () => {
+const AuthNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -22,4 +21,4 @@ const AuthNavigation = () => {
   )
 }
 
-export default AuthNavigation
+export default AuthNavigator

@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
-import Screen from './app/components/Screen'
-import AppFormImagePicker from './app/components/forms/FormImagePicker'
-import ListingEditScreen from './app/screens/ListingEditScreen'
-import ImageInputList from './app/components/ImageInputList'
+import AuthNavigation from './app/navigation/AuthNavigation'
+import navigationTheme from './app/navigation/NavigationTheme'
 
 const App = () => {
   return (
-    <Screen>
-      <ListingEditScreen />
-    </Screen>
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigation />
+    </NavigationContainer>
   )
 }
 

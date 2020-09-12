@@ -7,6 +7,7 @@ import Screen from '../components/Screen'
 import CategoryPickerItem from '../components/CategoryPickerItem'
 import FormImagePicker from '../components/forms/FormImagePicker'
 import useLocation from '../hooks/useLocation'
+import colors from '../config/colors'
 
 const validationSchema = Yup.object().shape({
   title: Yup.string()
@@ -131,6 +132,7 @@ const ListingEditScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.white,
     padding: 10,
   },
 })

@@ -2,8 +2,9 @@ import React from 'react'
 import { Image, StyleSheet } from 'react-native'
 import * as Yup from 'yup'
 
-import { AppForm, AppFormField, SubmitButton } from '../components/forms'
+import { Form, FormField, SubmitButton } from '../components/forms'
 import Screen from '../components/Screen'
+import colors from '../config/colors'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -20,12 +21,12 @@ const LoginScreen = () => {
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require('../assets/logo-red.png')} />
-      <AppForm
+      <Form
         initialValues={{ email: '', password: '' }}
         onSubmit={values => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
@@ -34,7 +35,7 @@ const LoginScreen = () => {
           placeholder="Email"
           textContentType="emailAddress"
         />
-        <AppFormField
+        <FormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
@@ -44,13 +45,14 @@ const LoginScreen = () => {
           textContentType="password"
         />
         <SubmitButton title="Login" />
-      </AppForm>
+      </Form>
     </Screen>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.white,
     padding: 10,
   },
   logo: {

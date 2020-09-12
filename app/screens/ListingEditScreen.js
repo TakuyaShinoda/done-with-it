@@ -1,15 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet } from 'react-native'
 import * as Yup from 'yup'
 
-import {
-  AppForm,
-  AppFormField,
-  AppFormPicker,
-  SubmitButton,
-} from '../components/forms'
+import { Form, FormField, FormPicker, SubmitButton } from '../components/forms'
 import Screen from '../components/Screen'
 import CategoryPickerItem from '../components/CategoryPickerItem'
+import FormImagePicker from '../components/forms/FormImagePicker'
+import useLocation from '../hooks/useLocation'
 
 const validationSchema = Yup.object().shape({
   title: Yup.string()
@@ -26,6 +23,7 @@ const validationSchema = Yup.object().shape({
     .required()
     .nullable()
     .label('Category'),
+  images: Yup.array().min(1, 'Please select at least one image.'),
 })
 
 const categories = [
@@ -86,27 +84,31 @@ const categories = [
 ]
 
 const ListingEditScreen = () => {
+  const location = useLocation()
+
   return (
     <Screen style={styles.container}>
-      <AppForm
+      <Form
         initialValues={{
           title: '',
           price: '',
           category: null,
           description: '',
+          images: [],
         }}
-        onSubmit={values => console.log(values)}
+        onSubmit={values => console.log(location)}
         validationSchema={validationSchema}
       >
-        <AppFormField maxLength={255} name="title" placeholder="Title" />
-        <AppFormField
+        <FormImagePicker name="images" />
+        <FormField maxLength={255} name="title" placeholder="Title" />
+        <FormField
           keyboardType="numeric"
           maxLength={8}
           name="price"
           placeholder="Price"
           width={120}
         />
-        <AppFormPicker
+        <FormPicker
           items={categories}
           name="category"
           numberOfColumns={3}
@@ -114,7 +116,7 @@ const ListingEditScreen = () => {
           PickerItemComponent={CategoryPickerItem}
           width="50%"
         />
-        <AppFormField
+        <FormField
           maxLength={255}
           multiline
           name="description"
@@ -122,7 +124,7 @@ const ListingEditScreen = () => {
           placeholder="Description"
         />
         <SubmitButton title="Post" />
-      </AppForm>
+      </Form>
     </Screen>
   )
 }

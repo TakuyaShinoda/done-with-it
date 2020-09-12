@@ -6,6 +6,7 @@ import ListingEditScreen from '../screens/ListingEditScreen'
 import AccountNavigator from './AccountNavigator'
 import FeedNavigator from './FeedNavigation'
 import NewListingButton from './NewListingButton'
+import routes from './routes'
 
 const Tab = createBottomTabNavigator()
 
@@ -28,7 +29,7 @@ const AppNavigator = () => {
           tabBarButton: () => (
             <NewListingButton
               onPress={() => {
-                navigation.navigate('ListingEdit')
+                navigation.navigate(routes.LISTING_EDIT)
               }}
             />
           ),

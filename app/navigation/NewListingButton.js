@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import colors from '../config/colors'
 
 const NewListingButton = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="plus-circle"
@@ -14,7 +14,7 @@ const NewListingButton = ({ onPress }) => {
           size={40}
         />
       </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   )
 }
 
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     bottom: 20,
     borderColor: colors.white,
     borderRadius: 40,
-    borderWidth: 10,
+    borderWidth: 5,
     height: 80,
     justifyContent: 'center',
     width: 80,

@@ -23,7 +23,7 @@ const ListingsScreen = ({ navigation }) => {
       {getListingsApi.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
-          <AppButton title="Retry" onPress={loadListings} />
+          <AppButton title="Retry" onPress={getListingsApi.request} />
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} size={30} />
